@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lex Digitalis Georgia</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <canvas id="networkCanvas" class="network-canvas"></canvas>
+
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <div class="logo">
+                <a href="#">
+                    <img src="image.png" alt="Lex Digitalis Logo" class="logo__img">
+                    <span class="logo__text" data-lang-key="brand">Lex Digitalis</span>
+                </a>
+            </div>
+
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#about" data-lang-key="nav_about">ჩვენს შესახებ</a></li>
+                    <li class="nav__item"><a href="#team" data-lang-key="nav_team">ჩვენი გუნდი</a></li>
+                    <li class="nav__item"><a href="#clients" data-lang-key="nav_clients">ჩვენი კლიენტები</a></li>
+                    <li class="nav__item"><a href="#public-sector" data-lang-key="nav_public">საჯარო სექტორისთვის</a></li>
+                    <li class="nav__item"><a href="#private-sector" data-lang-key="nav_private">კერძო სექტორისათვის</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <div class="lang-switcher">
+                    <button class="lang-btn lang-btn--active" data-lang="ka">KA</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <a href="#contact" class="btn btn--primary btn--cta" data-lang-key="cta_consult">კონსულტაციის მოთხოვნა</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <img src="image.png" alt="Lex Digitalis Logo" class="hero__logo">
+                
+                <div class="hero__title-wrapper">
+                    <span class="typewriter-text">
+                        <span id="typewriter"></span><span class="cursor"></span>
+                    </span>
+                </div>
+
+                <p class="hero__subtitle" data-lang-key="hero_subtitle">ტექნოლოგიების ინტეგრაცია სამუშაო პროცესში საჯარო და კერძო სექტორისთვის.</p>
+                <div class="hero__actions">
+                    <a href="#contact" class="btn btn--primary" data-lang-key="hero_cta_primary">ითანამშრომლეთ ჩვენთან</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section__header">
+                <h2 data-lang-key="about_title">ორმაგი უპირატესობა — სრული სამართლებრივი და ტექნოლოგიური მომსახურება</h2>
+            </div>
+            <div class="about__premium-box">
+                <p class="about__text-highlight" data-lang-key="about_text">Lex Digitalis წარმოადგენს ინოვაციურ პლატფორმას, რომელიც უზრუნველყოფს უმაღლესი სტანდარტის კომპლექსურ მომსახურებას როგორც სამართლებრივი, ისე ტექნოლოგიური მიმართულებით. ჩვენი გუნდი აერთიანებს მაღალკვალიფიციურ იურისტებს, პოლიტიკის დოკუმენტების ავტორებსა და ციფრული ტრანსფორმაციის ექსპერტებს მრავალწლიანი პრაქტიკული გამოცდილებით. ჩვენ ვეხმარებით საჯარო და კერძო სექტორის წარმომადგენლებს რთული ბიუროკრატიული თუ სამართლებრივი ბარიერების გადალახვაში, რეგულაციებთან შესაბამისობის უზრუნველყოფასა და თანამედროვე ტექნოლოგიური (მათ შორის ხელოვნური ინტელექტის) ინსტრუმენტების უსაფრთხო, ეფექტიან ინტეგრაციაში.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section bg-light">
+        <div class="container">
+            <div class="section__header">
+                <h2 data-lang-key="nav_team">ჩვენი გუნდი</h2>
+            </div>
+            <div class="about__grid">
+                <div class="card card--team">
+                    <div class="card__icon">⚖️</div>
+                    <h3 data-lang-key="about_legal_title">იურისტების გუნდი</h3>
+                    <p data-lang-key="about_legal_desc">გამოცდილი ადვოკატები, აკადემიური პერსონალი, სამართალშემოქმედები და პოლიტიკის დოკუმენტების ავტორები.</p>
+                </div>
+                <div class="card card--team">
+                    <div class="card__icon">💻</div>
+                    <h3 data-lang-key="about_tech_title">ტექნოლოგიური გუნდი</h3>
+                    <p data-lang-key="about_tech_desc">მანქანური სწავლების ინჟინრები, IT ინფრასტრუქტურის სპეციალისტები და ციფრული ტრანსფორმაციის კონსულტანტები.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 data-lang-key="nav_clients">ჩვენი კლიენტები</h2>
+            </div>
+            <div class="clients__premium-banner">
+                <p data-lang-key="clients_text">ჩვენ ვთანამშრომლობთ სახელმწიფო უწყებებთან და კერძო კომპანიებთან, რათა უზრუნველვყოთ მათი საქმიანობის ეფექტიანობა და სამართლებრივი გამართულობა, ასევე, ქართულ და უცხოურ სამეცნიერო დაწესებულებებთან, ინოვაციური მიდგომების გაზიარებისთვის.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="public-sector" class="section bg-light">
+        <div class="container">
+            <div class="section__header">
+                <h2 data-lang-key="nav_public">საჯარო სექტორისთვის</h2>
+            </div>
+            <div class="services__grid">
+                <div class="card card--public">
+                    <div class="card__icon">🏛</div>
+                    <h3 data-lang-key="service2_title">საჯარო სექტორის ციფრული ტრანსფორმაცია</h3>
+                    <p data-lang-key="service2_desc">საჯარო მმართველობის სამუშაო პროცესების ავტომატიზაცია, უქაღალდო, ღრუბლოვან ტექნოლოგიებთან თავსებად ოპერაციებზე გადასვლა.</p>
+                    <a href="#contact" class="card__link" data-lang-key="service_link">დეტალურად</a>
+                </div>
+                <div class="card card--public">
+                    <div class="card__icon">🤖</div>
+                    <h3 data-lang-key="service3_title">ადმინისტრაციული წარმოების/დოკუმენტბრუნვის AI ავტომატიზაცია</h3>
+                    <p data-lang-key="service3_desc">ადმინისტრაციულ ორგანოებში ხელოვნური ინტელექტის (AI) ინსტრუმენტების დანერგვა და შესაბამისი ინსტრუქციების/შიდა მოქმედების აქტების შემუშავება.</p>
+                    <a href="#contact" class="card__link" data-lang-key="service_link">დეტალურად</a>
+                </div>
+                <div class="card card--public">
+                    <div class="card__icon">🛡</div>
+                    <h3 data-lang-key="service4_title">სისხლისსამართლებრივი წარმოების გაციფრულება და ავტომატიზაცია</h3>
+                    <p data-lang-key="service4_desc">AI სისტემების დანერგვა საქმის მასალების ანალიზის, პროცესების ავტომატიზაციისა და მტკიცებულებათა კლასიფიკაციისთვის ევროდირექტივის მოთხოვნათა შესაბამისად.</p>
+                    <a href="#contact" class="card__link" data-lang-key="service_link">დეტალურად</a>
+                </div>
+                <div class="card card--public">
+                    <div class="card__icon">🎓</div>
+                    <h3 data-lang-key="service6_title">ტრენინგ-ცენტრი საჯარო მოხელეთათვის</h3>
+                    <p data-lang-key="service6_desc">უმაღლესი დონის სასერტიფიკატო პროგრამები და კურსები, რომლებიც შექმნილია საჯარო მოხელეების ტექნიკური წიგნიერებისა და შესაბამისობის (compliance) უნარების ასამაღლებლად.</p>
+                    <a href="#contact" class="card__link" data-lang-key="service_link">დეტალურად</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="private-sector" class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 data-lang-key="nav_private">კერძო სექტორისათვის</h2>
+            </div>
+            <div class="services__grid">
+                <div class="card card--private">
+                    <div class="card__icon">🏦</div>
+                    <h3 data-lang-key="service1_title">VASP ლიცენზირება და კრიპტორეგულაციების მხარდაჭერა</h3>
+                    <p data-lang-key="service1_desc">სრული გზამკვლევი საქართველოს ეროვნული ბანკისგან ვირტუალური აქტივის მომსახურების პროვაიდერის (VASP) სტატუსის მოსაპოვებლად.</p>
+                    <a href="#contact" class="card__link" data-lang-key="service_link">დეტალურად</a>
+                </div>
+                <div class="card card--private">
+                    <div class="card__icon">🔒</div>
+                    <h3 data-lang-key="service5_title">პერსონალურ მონაცემთა დაცვა და შესაბამისობა</h3>
+                    <p data-lang-key="service5_desc">პერსონალურ მონაცემთა უსაფრთხოების მკაცრი სახელმძღვანელო პრინციპების, ზეგავლენის შეფასებისა და რეაგირების მექანიზმების შემუშავება, საქართველოს კანონმდებლობასა და GDPR-თან თავსებადობით.</p>
+                    <a href="#contact" class="card__link" data-lang-key="service_link">დეტალურად</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-light">
+        <div class="container">
+            <div class="contact__inner">
+                <div class="contact__info">
+                    <h2 data-lang-key="contact_title">დაგვიკავშირდით</h2>
+                    <p data-lang-key="contact_subtitle">შეავსეთ ფორმა და ჩვენი იურისტი 24 საათში დაგიკავშირდებათ.</p>
+                </div>
+                <div class="contact__form">
+                    <form id="contactForm" action="https://docs.google.com/forms/d/e/1FAIpQLSf2lo9lfm458ssessl7MRZrrC_Rot264YrI10ApBPu3NrIXZg/formResponse" method="POST" target="_blank">
+                        <div class="form-group">
+                            <label for="fullName" data-lang-key="form_fullname">სახელი, გვარი *</label>
+                            <input type="text" id="fullName" name="entry.1055704041" required data-lang-key-placeholder="form_fullname_placeholder" />
+                        </div>
+                        <div class="form-group">
+                            <label for="org" data-lang-key="form_org">ორგანიზაცია / კომპანია</label>
+                            <input type="text" id="org" name="entry.1980147200" data-lang-key-placeholder="form_org_placeholder" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-lang-key="form_email">ელ. ფოსტა *</label>
+                            <input type="email" id="email" name="entry.1064532727" required data-lang-key-placeholder="form_email_placeholder" />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" data-lang-key="form_phone">ტელეფონი *</label>
+                            <input type="tel" id="phone" name="entry.977285014" required data-lang-key-placeholder="form_phone_placeholder" />
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceArea" data-lang-key="form_service">მომსახურების სფერო</label>
+                            <select id="serviceArea" name="entry.1374373410">
+                                <option value="">აირჩიეთ...</option>
+                                <option value="VASP / Crypto">VASP / Crypto</option>
+                                <option value="საჯარო სექტორი">საჯარო სექტორი</option>
+                                <option value="AI ავტომატიზაცია">AI ავტომატიზაცია</option>
+                                <option value="სისხლისსამართლებრივი წარმოება">სისხლისსამართლებრივი წარმოება</option>
+                                <option value="მონაცემთა დაცვა">მონაცემთა დაცვა</option>
+                                <option value="ტრენინგები">ტრენინგები</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-group--full">
+                            <label for="message" data-lang-key="form_message">პროექტის / შეკითხვის აღწერა</label>
+                            <textarea id="message" name="entry.1870048826" rows="4" data-lang-key-placeholder="form_message_placeholder"></textarea>
+                        </div>
+                        <div class="form-group form-group--full checkbox-group">
+                            <input type="checkbox" id="consent" required />
+                            <label for="consent" data-lang-key="form_consent">ვეთანხმები, რომ ჩემს მიერ გაგზავნილი მონაცემები დამუშავდეს Lex Digitalis-ის კონფიდენციალურობის პოლიტიკის შესაბამისად.</label>
+                        </div>
+                        <div class="form-group form-group--full">
+                            <button type="submit" class="btn btn--primary" style="width:100%" data-lang-key="form_submit">მოთხოვნის გაგზავნა</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <img src="image.png" alt="Lex Digitalis Logo" class="logo__img">
+                    <span data-lang-key="brand">Lex Digitalis</span>
+                </div>
+                <p data-lang-key="footer_address">თბილისი, საქართველო</p>
+                <p data-lang-key="footer_copyright">&copy; 2026 Lex Digitalis. ყველა უფლება დაცულია.</p>
+            </div>
+            <div class="footer__col">
+                <h4 data-lang-key="footer_legal_info">სამართლებრივი ინფორმაცია</h4>
+                <ul>
+                 <li><a href="privacy.html" target="_blank" data-lang-key="footer_privacy">კონფიდენციალურობის პოლიტიკა</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4 data-lang-key="footer_social">სოციალური ქსელები</h4>
+                <ul class="social-links">
+                    <li><a href="#" aria-label="LinkedIn">in</a></li>
+                    <li><a href="#" aria-label="Facebook">fb</a></li>
+                    <li><a href="#" aria-label="Medium">M</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="successModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__box">
+            <button class="modal__close" id="modalClose">&times;</button>
+            <div class="modal__icon">✅</div>
+            <h2 data-lang-key="modal_title">მოთხოვნა გაიგზავნა!</h2>
+            <p data-lang-key="modal_text">მადლობა! ჩვენი იურისტი მალე დაგიკავშირდებათ.</p>
+            <button class="btn btn--primary" id="modalBtn" data-lang-key="modal_btn">კარგი</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

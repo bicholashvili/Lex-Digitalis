@@ -1,0 +1,700 @@
+/* ===== ბაზისური პარამეტრები და ცვლადები ===== */
+:root {
+    --color-primary: #0F172A;
+    --color-secondary: #0EA5E9;
+    --color-accent: #475569;
+    --color-light: #F1F5F9;
+    --color-dark: #0B1121;
+    --color-text: #1E293B;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07), 0 0 0 1px rgba(15, 23, 42, 0.04);
+    --shadow-hover: 0 30px 60px -15px rgba(14, 165, 233, 0.18), 0 0 0 1px rgba(14, 165, 233, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 50%, #E2E8F0 100%);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===== АНИМИРОВАННЫЙ ФОН (CANVAS) ===== */
+.network-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* ===== ღილაკები (BUTTONS) ===== */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn--primary {
+    background: var(--color-secondary);
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
+}
+
+.btn--primary:hover {
+    background: #0284c7;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(14, 165, 233, 0.4);
+}
+
+/* ===== ლოგოს სტილები მენიუსთვის ===== */
+.logo__img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo__text {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* ===== დიდი ცენტრალური ლოგო HERO სექციისთვის ===== */
+.hero__logo {
+    height: 280px; 
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin-bottom: 32px;
+}
+
+/* ===== HEADER (ჰედერი) ===== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-primary);
+    color: #fff;
+    padding: 16px 0;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+}
+
+.nav__item a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav__item a:hover {
+    color: var(--color-secondary);
+}
+
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ===== LANG SWITCHER ===== */
+.lang-switcher {
+    display: flex;
+    background: #1e293b;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.lang-btn--active {
+    background: var(--color-secondary);
+    color: #fff;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    transition: var(--transition);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0b1121 100%);
+    color: #fff;
+    padding: 100px 0 120px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.hero__inner {
+    max-width: 900px;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+}
+
+/* ===== ЭФФЕКТ ПЕЧАТНОЙ МАШИНКИ (Полностью исправлено) ===== */
+.hero__title-wrapper {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0 auto 24px;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
+    max-width: 850px;
+    /* Фиксируем высоту, чтобы избежать "прыжков" сайта */
+    min-height: 140px; 
+    text-align: center; /* Центрируем текст обычным способом, без flex */
+    display: block; 
+}
+
+.typewriter-text {
+    background-color: #fde047; /* Желтый фон */
+    color: #0f172a; 
+    padding: 4px 12px;
+    border-radius: 6px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    display: inline; /* Сохраняет строчное поведение для естественного переноса */
+}
+
+.cursor {
+    display: inline-block;
+    width: 5px;
+    height: 1.05em; /* Высота под размер шрифта */
+    background-color: #0f172a; /* Черный/Темно-синий курсор */
+    margin-left: 2px;
+    vertical-align: text-bottom; /* Выравнивание курсора по низу текста */
+    animation: blink 0.9s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.hero__subtitle {
+    font-size: 1.25rem;
+    color: #e2e8f0; 
+    margin-bottom: 40px;
+    font-weight: 400;
+}
+
+.hero__actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* ===== სექციების სტრუქტურა ===== */
+.section {
+    padding: 70px 0; /* Уменьшено расстояние между секциями (было 95) */
+    scroll-margin-top: 85px;
+    background: transparent; 
+}
+
+.bg-light {
+    background: rgba(226, 232, 240, 0.4); 
+}
+
+.section__header {
+    text-align: center;
+    margin-bottom: 40px; /* Уменьшен отступ (было 55) */
+}
+
+.section__header h2 {
+    font-size: 2.1rem;
+    color: var(--color-primary);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 14px;
+}
+
+.section__header h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background: var(--color-secondary);
+    border-radius: 2px;
+}
+
+/* ===== ჩვენს შესახებ ბლოკი ===== */
+.about__premium-box {
+    text-align: center;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 40px 45px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(14, 165, 233, 0.08);
+    position: relative;
+}
+
+.about__text-highlight {
+    font-size: 1.18rem;
+    color: #0F172A; 
+    line-height: 1.9;
+    font-weight: 500; 
+}
+
+/* ===== ბადეები (FLEXBOX) ===== */
+.about__grid, .services__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center; 
+}
+
+/* ===== უნივერსალური ბარათის (უჯრის) სტილი ===== */
+.card {
+    background: #ffffff; 
+    padding: 40px 30px;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 30px);
+    min-width: 300px;
+    max-width: 360px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card__icon {
+    font-size: 2.8rem;
+    margin-bottom: 22px;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    font-weight: 700; 
+    color: var(--color-primary);
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.card p {
+    color: #1E293B; 
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    font-weight: 500; 
+}
+
+.card__link {
+    margin-top: auto; 
+    color: var(--color-secondary);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.card__link:hover {
+    color: var(--color-primary);
+    letter-spacing: 0.5px;
+}
+
+/* გუნდის ბარათები */
+.card--team {
+    border-bottom: 5px solid #cbd5e1;
+}
+.card--team:hover {
+    border-bottom-color: var(--color-primary);
+}
+
+/* საჯარო სექტორი */
+.card--public {
+    border-top: 5px solid var(--color-secondary);
+}
+.card--public:hover {
+    background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+/* კერძო სექტორი */
+.card--private::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--color-secondary) 0%, #a855f7 100%);
+}
+
+/* კლიენტების სექცია */
+.clients__premium-banner {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.9); 
+    border-radius: 12px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: var(--shadow);
+}
+.clients__premium-banner p {
+    font-size: 1.15rem;
+    color: #1E293B; 
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact__info h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.contact__form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--color-primary);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-top: 4px;
+}
+
+/* ===== FOOTER STYLING ===== */
+.footer {
+    background: var(--color-dark);
+    color: #cbd5e1; 
+    padding: 60px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #1e293b;
+    position: relative; 
+    z-index: 2;
+}
+
+.footer__inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.footer__logo .logo__img {
+    height: 55px;
+    margin-right: 12px;
+}
+
+.footer h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #cbd5e1; 
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer ul li a:hover {
+    color: #fff;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links a {
+    display: inline-block;
+    background: #1e293b;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    background: var(--color-secondary);
+}
+
+/* ===== MODAL ===== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+}
+
+.modal--open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal__box {
+    position: relative;
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-accent);
+}
+
+.modal__icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.modal h2 {
+    margin-bottom: 10px;
+    color: var(--color-primary);
+}
+
+.modal p {
+    color: var(--color-accent);
+    margin-bottom: 25px;
+}
+
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+@media (max-width: 992px) {
+    .contact__inner {
+        grid-template-columns: 1fr;
+    }
+    .footer__inner {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--color-primary);
+        padding: 20px 0;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+    .nav--open {
+        display: block;
+    }
+    .nav__list {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 24px;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .header__actions .btn--cta {
+        display: none;
+    }
+    .hero__title-wrapper {
+        font-size: 2.1rem;
+        min-height: 190px; /* Больше высоты под длинный текст на мобильных */
+    }
+    .hero__logo {
+        height: 180px; 
+    }
+    .footer__inner {
+        grid-template-columns: 1fr;
+    }
+    .section {
+        padding: 50px 0; /* Еще меньше на мобильных */
+    }
+    .section__header {
+        margin-bottom: 30px;
+    }
+    .about__premium-box {
+        padding: 30px 20px;
+    }
+    .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
